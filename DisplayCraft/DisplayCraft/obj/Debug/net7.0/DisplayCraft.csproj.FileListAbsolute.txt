@@ -1,0 +1,14 @@
+C:\Users\500519942\Desktop\#projetos\DisplayCraft\ADA_CSharp_M3_projeto\DisplayCraft\DisplayCraft\bin\Debug\net7.0\DisplayCraft.exe
+C:\Users\500519942\Desktop\#projetos\DisplayCraft\ADA_CSharp_M3_projeto\DisplayCraft\DisplayCraft\bin\Debug\net7.0\DisplayCraft.deps.json
+C:\Users\500519942\Desktop\#projetos\DisplayCraft\ADA_CSharp_M3_projeto\DisplayCraft\DisplayCraft\bin\Debug\net7.0\DisplayCraft.runtimeconfig.json
+C:\Users\500519942\Desktop\#projetos\DisplayCraft\ADA_CSharp_M3_projeto\DisplayCraft\DisplayCraft\bin\Debug\net7.0\DisplayCraft.dll
+C:\Users\500519942\Desktop\#projetos\DisplayCraft\ADA_CSharp_M3_projeto\DisplayCraft\DisplayCraft\bin\Debug\net7.0\DisplayCraft.pdb
+C:\Users\500519942\Desktop\#projetos\DisplayCraft\ADA_CSharp_M3_projeto\DisplayCraft\DisplayCraft\obj\Debug\net7.0\DisplayCraft.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\500519942\Desktop\#projetos\DisplayCraft\ADA_CSharp_M3_projeto\DisplayCraft\DisplayCraft\obj\Debug\net7.0\DisplayCraft.AssemblyInfoInputs.cache
+C:\Users\500519942\Desktop\#projetos\DisplayCraft\ADA_CSharp_M3_projeto\DisplayCraft\DisplayCraft\obj\Debug\net7.0\DisplayCraft.AssemblyInfo.cs
+C:\Users\500519942\Desktop\#projetos\DisplayCraft\ADA_CSharp_M3_projeto\DisplayCraft\DisplayCraft\obj\Debug\net7.0\DisplayCraft.csproj.CoreCompileInputs.cache
+C:\Users\500519942\Desktop\#projetos\DisplayCraft\ADA_CSharp_M3_projeto\DisplayCraft\DisplayCraft\obj\Debug\net7.0\DisplayCraft.dll
+C:\Users\500519942\Desktop\#projetos\DisplayCraft\ADA_CSharp_M3_projeto\DisplayCraft\DisplayCraft\obj\Debug\net7.0\refint\DisplayCraft.dll
+C:\Users\500519942\Desktop\#projetos\DisplayCraft\ADA_CSharp_M3_projeto\DisplayCraft\DisplayCraft\obj\Debug\net7.0\DisplayCraft.pdb
+C:\Users\500519942\Desktop\#projetos\DisplayCraft\ADA_CSharp_M3_projeto\DisplayCraft\DisplayCraft\obj\Debug\net7.0\DisplayCraft.genruntimeconfig.cache
+C:\Users\500519942\Desktop\#projetos\DisplayCraft\ADA_CSharp_M3_projeto\DisplayCraft\DisplayCraft\obj\Debug\net7.0\ref\DisplayCraft.dll

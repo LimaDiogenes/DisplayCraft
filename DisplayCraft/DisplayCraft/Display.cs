@@ -1,7 +1,12 @@
 using static System.Console;
 
+
 namespace DisplayCraft
 {
+    /// <summary>
+    /// Cria um objeto display para mostrar informações na tela
+    /// Podendo ter margens ou não
+    /// </summary>
     public class Display
     {
         private int PosX {get;}
@@ -29,7 +34,7 @@ namespace DisplayCraft
         {
             Left,
             Center,
-            Middle,
+            MiddleRight,
             MiddleLeft,
             Right,
         }
@@ -39,11 +44,11 @@ namespace DisplayCraft
         {
             PosX = posX;
             PosY = posY;
-            Width = width + posX+ 2;
-            Height = height + posY + 2;
+            Width = width + 2;
+            Height = height + 2;
             Background = background;
             Foreground = foreground;
-            Lines = new string[Height + 2]; // + 2 para usar linha 0 e última linha como margens
+            Lines = new string[Height];
             SetStyle(style); // estilo da margem         
         }
         public void SetLine(int line, string text, Align align = Align.Left)
@@ -59,78 +64,56 @@ namespace DisplayCraft
             foreach(int line in lines)            
             {
                 int index = Array.IndexOf(lines, line);
+                string str = text[index];
                 
-                if (index > Height  || index < 0)
+                if (line > Height-2  || line < 1)
                 {
                     throw new Exception($"Line {line} is not within the display");
                 }
 
-                if (text[index].Length > Width - 2)
+                if (str.Length > Width)
                 {
                     throw new Exception($"Text {text[index]} is not within the display");
                 }              
 
-                Lines[line] = BuildString(text[index], align);
+                Lines[line] = BuildString(str, align);
             }
         }
-        public void Print()
+        public void PrintAll()
         {
             int x = PosX + 1;
             int y = PosY + 1;
-            
-            foreach(string line in Lines)
+
+            SetColor(Background, Foreground);
+
+            string[] insideLines = Lines.Skip(1).SkipLast(1).ToArray();
+
+            foreach(string line in insideLines)           
             {
                 SetCursorPosition(x, y);
-                Write(line);
+                Write(line ?? BuildString(""));
                 y++;
             }
+
+            DefaultColor();
         }
-        private string BuildString(string text, Align align)
-        {            
-            int padHalfWidth = Width/2;
-            
-            if (Width % 2 != 0 && text.Length % 2 == 0)
+        public void PrintAll(ConsoleColor background, ConsoleColor foreground)
+        {
+            int x = PosX + 1;
+            int y = PosY + 1;
+
+            SetColor(background, foreground);
+
+            string[] insideLines = Lines.Skip(1).SkipLast(1).ToArray();
+
+            foreach(string line in insideLines)           
             {
-                padHalfWidth++;
+                SetCursorPosition(x, y);
+                Write(line ?? BuildString(""));
+                y++;
             }
 
-            switch(align)
-            {
-            case Align.Right:
-            {      
-                return text.PadLeft(Width - text.Length, ' ');                     
-            }
-            case Align.Center:
-            {                
-                return "".PadLeft((Width/2) - (text.Length/2)) + text + "".PadRight(padHalfWidth - text.Length/2);                                     
-            }
-            case Align.MiddleLeft:
-            {                
-                return text.PadLeft(padHalfWidth) + "".PadRight(padHalfWidth);                                     
-            }
-            case Align.Middle:
-            {                              
-                return text.PadLeft(Width/2) + "".PadRight(padHalfWidth);                                   
-            }
-            case Align.Left:
-            {
-                return text.PadRight(Width, ' ');
-            }
-            default:
-            {
-                throw new NotImplementedException();
-            }            
-            }
-        }
-        private string BuildCenteredBorders(string text = "", char starter = default, char ends = default, char sep = default)
-        {         
-            starter = (starter == default) ? Sides : starter;
-            ends = (ends == default) ? Sides : ends;
-            sep = (sep == default) ? ' ' : sep;           
-            
-            string str = text.PadLeft(Width, sep).PadRight(Width, sep);
-            return starter + str + ends;
-            
+            DefaultColor();
         }
         public void Borders()
         {
@@ -160,6 +143,35 @@ namespace DisplayCraft
             Write(BuildCenteredBorders(starter: BottomLeft, sep: Mid, ends: BottomRight));
             DefaultColor();
         }        
+        public void Borders(BorderStyle style)
+        {
+            int x = PosX;
+            int y = PosY;        
+            SetStyle(style);  
+                        
+            // margem superior
+            SetCursorPosition(x, y);
+            SetColor(Background, Foreground);         
+            Write(BuildCenteredBorders(starter: TopLeft, sep: Mid, ends: TopRight));
+            DefaultColor();            
+            y++;
+
+            // linhas do meio
+            for (int lineCount = 1; lineCount < Lines.Length - 1; lineCount++)
+            {
+                SetCursorPosition(x, y);
+                SetColor(Background, Foreground);
+                Write(BuildCenteredBorders(starter: Sides, ends: Sides));
+                DefaultColor();
+                y++;
+            }
+
+            // margem inferior
+            SetCursorPosition(x, y);
+            SetColor(Background, Foreground);
+            Write(BuildCenteredBorders(starter: BottomLeft, sep: Mid, ends: BottomRight));
+            DefaultColor();
+        } 
         public void SetStyle(BorderStyle style)
         {
             switch (style)
@@ -194,6 +206,87 @@ namespace DisplayCraft
                     throw new NotImplementedException();
                 }  
             }
+        }
+        private string BuildString(string text, Align align = Align.Left)
+        {            
+            int leftPadSize = Width/2;
+            int rightPadSize = Width/2;
+            int halfTextLen = text.Length/2;
+            int oddText = 0;
+            int availableSpace = Width;
+            
+            if (Width % 2 != 0)
+            {
+                rightPadSize++;
+            }
+
+            if (text.Length % 2 != 0)
+            {
+                rightPadSize--;
+                oddText = 1;
+            }
+
+            switch(align)
+            {
+            case Align.Right:
+            {   
+                if (availableSpace < text.Length)
+                {
+                    throw new Exception($"Not enough space to print {text} Maximum number of chars: {availableSpace}");
+                }    
+                return text.PadLeft(Width);                     
+            }
+            case Align.Center:
+            {   
+                if (availableSpace < text.Length)
+                {
+                    throw new Exception($"Not enough space to print {text} Maximum number of chars: {availableSpace}");
+                }             
+                return "".PadLeft(leftPadSize - halfTextLen) + text + "".PadRight(rightPadSize - halfTextLen);                                     
+            }
+            case Align.MiddleLeft:
+            {                
+                availableSpace -= rightPadSize;
+                if ((availableSpace - 1 < text.Length && oddText == 1) || 
+                    availableSpace < text.Length && oddText == 0) // verificando se existe espaço suficiente para imprimir
+                {
+                    throw new Exception($"Not enough space to print {text} Maximum number of chars: {availableSpace}");
+                }
+                return text.PadLeft(leftPadSize) + "".PadRight(rightPadSize + oddText);                                     
+            }
+            case Align.MiddleRight:
+            {                
+                availableSpace -= leftPadSize;
+                if ((availableSpace < text.Length && oddText == 1) || 
+                    availableSpace < text.Length && oddText == 0) // verificando se existe espaço suficiente para imprimir
+                {
+                    throw new Exception($"Not enough space to print {text} Maximum number of chars: {availableSpace}");
+                }    
+       
+                return "".PadLeft(leftPadSize) + text.PadRight(rightPadSize + oddText);                                   
+            }
+            case Align.Left:
+            {
+                if (availableSpace < text.Length)
+                {
+                    throw new Exception($"Not enough space to print {text} Maximum number of chars: {availableSpace}");
+                } 
+                return text.PadRight(Width);
+            }            
+            default:
+            {
+                throw new Exception("Invalid alignment option. Usage: Align.Center / Align.Right, etc.");
+            }            
+            }
+        }
+        private string BuildCenteredBorders(string text = "", char starter = default, char ends = default, char sep = default)
+        {         
+            starter = (starter == default) ? Sides : starter;
+            ends = (ends == default) ? Sides : ends;
+            sep = (sep == default) ? ' ' : sep;           
+            
+            string str = text.PadLeft(Width, sep).PadRight(Width, sep);
+            return starter + str + ends;            
         }
         private void SetDefaultStyle()
         {
@@ -242,14 +335,13 @@ namespace DisplayCraft
         }
         private void SetColor(ConsoleColor background, ConsoleColor foreground)
         {
-            BackgroundColor = (BackgroundColor == background) ? background : Background;
-            ForegroundColor = (ForegroundColor == foreground) ? foreground : Foreground;
+            BackgroundColor = (BackgroundColor == background) ? Background : background;
+            ForegroundColor = (ForegroundColor == foreground) ? Foreground : foreground;
         }
         private static void DefaultColor()
         {
             BackgroundColor = ConsoleColor.Black;
             ForegroundColor = ConsoleColor.White;
         }
-
     }
 }

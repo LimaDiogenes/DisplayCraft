@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\500519942\\Desktop\\#projetos\\DisplayCraft\\ADA_CSharp_M3_projeto\\DisplayCraft\\DisplayCraft\\DisplayCraft.csproj": {}
+    "F:\\vsprojects\\DisplayCraft\\DisplayCraft\\DisplayCraft\\DisplayCraft.csproj": {}
   },
   "projects": {
-    "C:\\Users\\500519942\\Desktop\\#projetos\\DisplayCraft\\ADA_CSharp_M3_projeto\\DisplayCraft\\DisplayCraft\\DisplayCraft.csproj": {
+    "F:\\vsprojects\\DisplayCraft\\DisplayCraft\\DisplayCraft\\DisplayCraft.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\500519942\\Desktop\\#projetos\\DisplayCraft\\ADA_CSharp_M3_projeto\\DisplayCraft\\DisplayCraft\\DisplayCraft.csproj",
+        "projectUniqueName": "F:\\vsprojects\\DisplayCraft\\DisplayCraft\\DisplayCraft\\DisplayCraft.csproj",
         "projectName": "DisplayCraft",
-        "projectPath": "C:\\Users\\500519942\\Desktop\\#projetos\\DisplayCraft\\ADA_CSharp_M3_projeto\\DisplayCraft\\DisplayCraft\\DisplayCraft.csproj",
-        "packagesPath": "C:\\Users\\500519942\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\500519942\\Desktop\\#projetos\\DisplayCraft\\ADA_CSharp_M3_projeto\\DisplayCraft\\DisplayCraft\\obj\\",
+        "projectPath": "F:\\vsprojects\\DisplayCraft\\DisplayCraft\\DisplayCraft\\DisplayCraft.csproj",
+        "packagesPath": "C:\\Users\\diord\\.nuget\\packages\\",
+        "outputPath": "F:\\vsprojects\\DisplayCraft\\DisplayCraft\\DisplayCraft\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "F:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\500519942\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\diord\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -53,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

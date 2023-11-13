@@ -1,11 +1,15 @@
+using System.Text;
 using static System.Console;
 
 
 namespace DisplayCraft
 {
     /// <summary>
-    /// Cria um objeto display para mostrar informações na tela
-    /// Podendo ter margens ou não
+    /// Cria um objeto display personalizável 
+    /// para mostrar informações na tela
+    /// Windows: Recomendado utilizar "Console.BufferWidth, Console.BufferHeight, 
+    ///                                Console.WindowWidth e Console.WindowHeight 
+    ///                                para setar tamanho da janela antes de utilizar Display 
     /// </summary>
     public class Display
     {
@@ -38,10 +42,26 @@ namespace DisplayCraft
             MiddleLeft,
             Right,
         }
+        /// <summary>
+        /// Inicializa o display com os parametros escolhidos.
+        /// Todos os parametros sao opcionais e possuem valor default
+        /// (style: Uso: Display.BorderStyle.ESTILOESCOLHIDO)
+        /// Windows: Recomendado utilizar "Console.BufferWidth, Console.BufferHeight, 
+        ///                                Console.WindowWidth e Console.WindowHeight 
+        ///                                para setar tamanho da janela antes de utilizar Display 
+        /// </summary>
+        /// <param name="height">Altura em linhas</param>
+        /// <param name="width">Largura em caracteres</param>
+        /// <param name="posX">Posicao do topo esquerdo em relacao a janela do console</param>
+        /// <param name="posY">Posicao em relacao ao topo da janela do console</param>
+        /// <param name="background">Cor do plano de fundo. (Uso: ConsoleColor.CORESCOLHIDA)</param>
+        /// <param name="foreground">Cor da impressao na tela. (Uso: ConsoleColor.CORESCOLHIDA)</param>
+        /// <param name="style">Estilo das bordas. (Uso: Display.BorderStyle.ESTILOESCOLHIDO)</param>
         public Display(int height = 30, int width = 100,  int posX = 0, int posY = 0,
         ConsoleColor background = ConsoleColor.Black, ConsoleColor foreground = ConsoleColor.White, 
         BorderStyle style = BorderStyle.Default)
         {
+            OutputEncoding = Encoding.UTF8; 
             PosX = posX;
             PosY = posY;
             Width = width + 2;
@@ -49,12 +69,39 @@ namespace DisplayCraft
             Background = background;
             Foreground = foreground;
             Lines = new string[Height];
-            SetStyle(style); // estilo da margem         
+            SetStyle(style); // estilo da margem
         }
+        /// <summary>
+        /// Define o conteudo de uma linha especifica no display.        
+        /// (align - Uso: Display.Align.ALINHAMENTOESCOLHIDO)
+        /// </summary>
+        /// <param name="line">Numero da linha a ser atualizada.</param>
+        /// <param name="text">Texto a ser exibido.</param>
+        /// <param name="align">Alinhamento do texto (Padrao: Align.Left).</param>
+        /// <exception cref="Exception">Levantada se o numero da linha estiver fora do intervalo válido.</exception>
         public void SetLine(int line, string text, Align align = Align.Left)
         {
-            Lines[line] = BuildString(text, align);
+            if (line > 0 && line < Height-1)
+            {
+                Lines[line] = BuildString(text, align);
+            }
+            else
+            {
+                throw new Exception($"Line {line} is not within the display");
+            }
         }
+        /// <summary>
+        /// Define o conteudo de varias linhas, atraves de 2 vetores.
+        /// (Uso: vetor lines: recebe o indice da linha / 
+        /// vetor text: recebe o texto para a linha indicada / 
+        /// --Ex.: lines[]{1, 3, 5} + text[]{"abc", "def", "ghi"} 
+        /// para atualizar linhas 1, 3 e 5--
+        /// align: Display.Align.ALINHAMENTOESCOLHIDO)
+        /// </summary>
+        /// <param name="lines">Numero da linha a ser atualizada.</param>
+        /// <param name="text">Texto a ser exibido.</param>
+        /// <param name="align">Alinhamento do texto (Padrao: Align.Left)</param>
+        /// <exception cref="Exception"></exception>
         public void SetLine(int[] lines, string[] text, Align align = Align.Left)
         {         
             if (lines.Length != text.Length)
@@ -79,6 +126,9 @@ namespace DisplayCraft
                 Lines[line] = BuildString(str, align);
             }
         }
+        /// <summary>
+        /// Imprime todas as linhas internas do menu, excluindo as margens
+        /// </summary>
         public void PrintAll()
         {
             int x = PosX + 1;
@@ -97,6 +147,12 @@ namespace DisplayCraft
 
             DefaultColor();
         }
+        /// <summary>
+        /// Imprime todas as linhas internas do menu, excluindo as margens, 
+        /// aceitando cores de fundo e do conteudo como parametros
+        /// </summary>
+        /// <param name="background">Cor do plano de fundo</param>
+        /// <param name="foreground">Cor do conteudo impresso</param>
         public void PrintAll(ConsoleColor background, ConsoleColor foreground)
         {
             int x = PosX + 1;
@@ -115,6 +171,10 @@ namespace DisplayCraft
 
             DefaultColor();
         }
+        /// <summary>
+        /// Imprime as margens e o plano de fundo.
+        /// Deve ser chamado antes do PrintAll().
+        /// </summary>
         public void Borders()
         {
             int x = PosX;
@@ -142,7 +202,12 @@ namespace DisplayCraft
             SetColor(Background, Foreground);
             Write(BuildCenteredBorders(starter: BottomLeft, sep: Mid, ends: BottomRight));
             DefaultColor();
-        }        
+        }
+        /// <summary>
+        /// Imprime as margens e o plano de fundo, 
+        /// alterando o estilo de margem.
+        /// Deve ser chamado antes do PrintAll().
+        /// </summary>
         public void Borders(BorderStyle style)
         {
             int x = PosX;
@@ -171,7 +236,13 @@ namespace DisplayCraft
             SetColor(Background, Foreground);
             Write(BuildCenteredBorders(starter: BottomLeft, sep: Mid, ends: BottomRight));
             DefaultColor();
-        } 
+        }
+        /// <summary>
+        /// Altera o estilo da margem
+        /// (Uso: Display.BorderStyle.ESCOLHA)
+        /// </summary>
+        /// <param name="style">Estilo de margem (Uso: Display.BorderStyle.ESCOLHA)</param>
+        /// <exception cref="Exception"></exception>
         public void SetStyle(BorderStyle style)
         {
             switch (style)
@@ -203,7 +274,7 @@ namespace DisplayCraft
                 }
                 default:
                 {
-                    throw new NotImplementedException();
+                    throw new Exception("Invalid Selection of BorderStyle");
                 }  
             }
         }

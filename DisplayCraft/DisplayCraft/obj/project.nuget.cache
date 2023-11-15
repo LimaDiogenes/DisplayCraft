@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "EBJBmsqZFCqSPtnGdOni44dOt4BBTMv3iCHEno5bKf8z7bcoW/yxX7Tumj0EyKhNPz1WrRi58Sc0mHo2fcTIgg==",
+  "dgSpecHash": "U2iyWg24aj+TuFgp2C1FlMtaG5wZe58e2yIRgHtnuTonwkMjtE8hV9CKqhWMlsYC8EV0BDczf3TGB1x2RUBeCw==",
   "success": true,
-  "projectFilePath": "F:\\vsprojects\\DisplayCraft\\DisplayCraft\\DisplayCraft\\DisplayCraft.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\500519942\\Desktop\\#projetos\\DisplayCraft\\ADA_CSharp_M3_projeto\\DisplayCraft\\DisplayCraft\\DisplayCraft.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\500519942\\.nuget\\packages\\ansi.console\\2.5.0\\ansi.console.2.5.0.nupkg.sha512"
+  ],
   "logs": []
 }

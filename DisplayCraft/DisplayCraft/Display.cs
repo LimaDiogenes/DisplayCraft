@@ -13,8 +13,8 @@ namespace DisplayCraft
     /// </summary>
     public class Display
     {
-        internal int PosX { get; }
-        internal int PosY { get; }
+        public int PosX { get; }
+        public int PosY { get; }
         private int Width { get; }
         private int Height { get; }
         private string[] Lines { get; set; }

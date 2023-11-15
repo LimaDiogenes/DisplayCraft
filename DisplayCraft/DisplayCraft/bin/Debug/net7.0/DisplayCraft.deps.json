@@ -7,8 +7,19 @@
   "targets": {
     ".NETCoreApp,Version=v7.0": {
       "DisplayCraft/1.0.0": {
+        "dependencies": {
+          "ANSI.Console": "2.5.0"
+        },
         "runtime": {
           "DisplayCraft.dll": {}
+        }
+      },
+      "ANSI.Console/2.5.0": {
+        "runtime": {
+          "lib/net5.0/ANSIConsole.dll": {
+            "assemblyVersion": "2.5.0.0",
+            "fileVersion": "2.5.0.0"
+          }
         }
       }
     }
@@ -18,6 +29,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "ANSI.Console/2.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xVszQd1HA/EusmX/xGeomPBy6YIY5soaCKPuoqbOpZHP5Sfvg2xYdliBIQtcKVDUgNj+5G++LkFPP2Mtm0DITA==",
+      "path": "ansi.console/2.5.0",
+      "hashPath": "ansi.console.2.5.0.nupkg.sha512"
     }
   }
 }

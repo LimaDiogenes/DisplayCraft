@@ -1,5 +1,6 @@
 using DisplayCraft;
 using static DisplayCraft.Display;
+using ANSIConsole;
 
 namespace ExampleNamespace
 {
@@ -7,10 +8,12 @@ namespace ExampleNamespace
     {
         static void Main(string[] args)
         {
-            Console.BufferWidth = Console.WindowWidth = 150; // apenas windows
-            Console.BufferHeight = Console.WindowHeight = 40;
+            // #pragma warning disable
+            // Console.BufferWidth = Console.WindowWidth = 100; // apenas windows
+            // Console.BufferHeight = Console.WindowHeight = 35;
+            // #pragma warning restore
 
-            Console.Clear();
+            //Console.Clear();
             Display display1 = new(width: 80, height: 28, posX: 2, posY: 3, style: BorderStyle.Curved,
                                     background: ConsoleColor.Blue, foreground: ConsoleColor.Black);
             display1.Borders();
@@ -21,12 +24,12 @@ namespace ExampleNamespace
             display1.SetLine(new int[]{2,8}, new string[]{"dos", "ocho"}, Align.Right);          
             display1.PrintAll();
 
-            ProgressBar bar1 = new(display1, 50.0, 35, 6, 30, 3, showNumber: true, numberColor: ConsoleColor.White);
+            ProgressBar bar1 = new(display1, percentage: 50, 35, 6, showNumber: true, numberColor: ConsoleColor.White);
             bar1.PrintBar();
 
-            ProgressBar bar2 = new(display1, percentage: 10.0, posX: 20, posY: 20, width: 10, 
+            ProgressBar bar2 = new(display1, percentage: 10, posX: 20, posY: 20, width: 10, 
                                    height: 1, barCharacter: '■', showNumber: true);
-            bar2.PrintBar(ConsoleColor.DarkGreen, ConsoleColor.White);
+            bar2.PrintBar();
 
             //Display d2 = new(width: 10, height: 4, posX: 38, posY: 4,
             //                background: ConsoleColor.DarkCyan, foreground: ConsoleColor.Gray);

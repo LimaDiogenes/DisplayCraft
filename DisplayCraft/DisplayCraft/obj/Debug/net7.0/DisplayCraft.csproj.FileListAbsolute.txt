@@ -26,3 +26,6 @@ F:\vsprojects\DisplayCraft\DisplayCraft\DisplayCraft\obj\Debug\net7.0\refint\Dis
 F:\vsprojects\DisplayCraft\DisplayCraft\DisplayCraft\obj\Debug\net7.0\DisplayCraft.pdb
 F:\vsprojects\DisplayCraft\DisplayCraft\DisplayCraft\obj\Debug\net7.0\DisplayCraft.genruntimeconfig.cache
 F:\vsprojects\DisplayCraft\DisplayCraft\DisplayCraft\obj\Debug\net7.0\ref\DisplayCraft.dll
+C:\Users\500519942\Desktop\#projetos\DisplayCraft\ADA_CSharp_M3_projeto\DisplayCraft\DisplayCraft\bin\Debug\net7.0\ANSIConsole.dll
+C:\Users\500519942\Desktop\#projetos\DisplayCraft\ADA_CSharp_M3_projeto\DisplayCraft\DisplayCraft\obj\Debug\net7.0\DisplayCraft.csproj.AssemblyReference.cache
+C:\Users\500519942\Desktop\#projetos\DisplayCraft\ADA_CSharp_M3_projeto\DisplayCraft\DisplayCraft\obj\Debug\net7.0\DisplayCraft.csproj.CopyComplete

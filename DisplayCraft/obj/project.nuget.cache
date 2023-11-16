@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1UC63m/rwQxzCWUH7B5MbJHIDttIwpSqvujq6AQiJ9zJKosh2fRJS9nR8sjIDH/8NwP5j2Our6mjyS2Xuukw6w==",
+  "dgSpecHash": "L7wn3VjvS4mU8mZXfrFEU7PE6OiTUYTZEbQ9N1KCEsazKLl0pzYQ57OpldEFzxMLaSBgmE5fESVWIzYSwtPgTg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\500519942\\Desktop\\#projetos\\DisplayCraft\\ADA_CSharp_M3_projeto\\DisplayCraft\\DisplayCraft\\DisplayCraft.csproj",
+  "projectFilePath": "C:\\Users\\500519942\\Desktop\\#projetos\\DisplayCraft\\DisplayCraft\\DisplayCraft\\DisplayCraft.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\500519942\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.14\\microsoft.netcore.app.ref.7.0.14.nupkg.sha512",
     "C:\\Users\\500519942\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.14\\microsoft.windowsdesktop.app.ref.7.0.14.nupkg.sha512",

@@ -70,12 +70,13 @@
                 "antialiasingMode": "grayscale",
                 "closeOnExit": "automatic",
                 "colorScheme": "Campbell",
-                "commandline": "\".\\\\bin\\\\Debug\\\\net7.0\\\\DisplayCraft.exe\"",
-                "cursorShape": "bar",
+                "commandline": "C:\\Users\\500519942\\Desktop\\#projetos\\DisplayCraft\\DisplayCraft\\DisplayCraft\\bin\\Debug\\net7.0\\DisplayCraft.exe",
+                "cursorShape": "filledBox",
+                "experimental.retroTerminalEffect": false,
                 "font": 
                 {
                     "face": "Cascadia Mono",
-                    "size": 12.0
+                    "size": 10.0
                 },
                 "guid": "{aa874ed3-be5b-423b-abe7-af720ca50d64}",
                 "hidden": false,

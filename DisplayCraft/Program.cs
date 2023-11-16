@@ -10,10 +10,10 @@ namespace ExampleNamespace
     {
         static void Main(string[] args)
         {            
-            // #pragma warning disable
-            // Console.BufferWidth = Console.WindowWidth = 100; // apenas windows
-            // Console.BufferHeight = Console.WindowHeight = 35;
-            // #pragma warning restore
+            #pragma warning disable
+            Console.BufferWidth = Console.WindowWidth = 135; // apenas windows
+            Console.BufferHeight = Console.WindowHeight = 38;
+            #pragma warning restore
 
             //Console.Clear();
             Display display1 = new(width: 80, height: 28, posX: 2, posY: 3, style: BorderStyle.Curved,

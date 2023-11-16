@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\500519942\\Desktop\\#projetos\\DisplayCraft\\ADA_CSharp_M3_projeto\\DisplayCraft\\DisplayCraft\\DisplayCraft.csproj",
+      "projectUniqueName": "C:\\Users\\500519942\\Desktop\\#projetos\\DisplayCraft\\DisplayCraft\\DisplayCraft\\DisplayCraft.csproj",
       "projectName": "DisplayCraft",
-      "projectPath": "C:\\Users\\500519942\\Desktop\\#projetos\\DisplayCraft\\ADA_CSharp_M3_projeto\\DisplayCraft\\DisplayCraft\\DisplayCraft.csproj",
+      "projectPath": "C:\\Users\\500519942\\Desktop\\#projetos\\DisplayCraft\\DisplayCraft\\DisplayCraft\\DisplayCraft.csproj",
       "packagesPath": "C:\\Users\\500519942\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\500519942\\Desktop\\#projetos\\DisplayCraft\\ADA_CSharp_M3_projeto\\DisplayCraft\\DisplayCraft\\obj\\",
+      "outputPath": "C:\\Users\\500519942\\Desktop\\#projetos\\DisplayCraft\\DisplayCraft\\DisplayCraft\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\500519942\\AppData\\Roaming\\NuGet\\NuGet.Config"

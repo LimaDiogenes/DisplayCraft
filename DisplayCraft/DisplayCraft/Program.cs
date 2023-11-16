@@ -1,18 +1,23 @@
-using DisplayCraft;
+﻿using DisplayCraft;
+using ANSIConsoleWindows;
+using static System.ConsoleColor;
 using static DisplayCraft.Display;
+
 
 namespace ExampleNamespace
 {
     public class Program
     {
         static void Main(string[] args)
-        {
-            Console.BufferWidth = Console.WindowWidth = 150; // apenas windows
-            Console.BufferHeight = Console.WindowHeight = 40;
+        {            
+            // #pragma warning disable
+            // Console.BufferWidth = Console.WindowWidth = 100; // apenas windows
+            // Console.BufferHeight = Console.WindowHeight = 35;
+            // #pragma warning restore
 
-            Console.Clear();
+            //Console.Clear();
             Display display1 = new(width: 80, height: 28, posX: 2, posY: 3, style: BorderStyle.Curved,
-                                    background: ConsoleColor.Blue, foreground: ConsoleColor.Black);
+                                    background: Blue, foreground: Black);
             display1.Borders();
             string linha15 = "esse é o teste da linha 15";
             int[] posicoes = { 1, 4, 7, 15 };
@@ -21,12 +26,39 @@ namespace ExampleNamespace
             display1.SetLine(new int[]{2,8}, new string[]{"dos", "ocho"}, Align.Right);          
             display1.PrintAll();
 
-            ProgressBar bar1 = new(display1, 50.0, 35, 6, 30, 3, showNumber: true, numberColor: ConsoleColor.White);
+            ProgressBar bar1 = new(display1, posX:5, posY: 6, percentage: 50, showNumber: true,  
+                                    numberColor: Black, numberBackground:DarkYellow,
+                                    barBackground: Red, barColor: Green, width: 35, height: 3);
             bar1.PrintBar();
 
-            ProgressBar bar2 = new(display1, percentage: 10.0, posX: 20, posY: 20, width: 10, 
+            ProgressBar bar2 = new(display1, percentage: 25, posX: 20, posY: 20, width: 25, 
                                    height: 1, barCharacter: '■', showNumber: true);
-            bar2.PrintBar(ConsoleColor.DarkGreen, ConsoleColor.White);
+            bar2.PrintBar();
+
+            ProgressBar bar3 = new(display1, 90);
+            bar3.SetSize(25);
+            bar3.SetPosition(1, 1);
+            bar3.SetNumberStyle(DarkRed, Black, false);
+            bar3.PrintBar();
+
+            ProgressBar bar4 = new(display1, posX:5, posY: 10, percentage: 50, showNumber: true,  
+                        numberColor: Black, showNumberBackground: false,
+                        barBackground: DarkRed, barColor: DarkGreen, width: 35, height: 5);
+            bar4.PrintBar();
+
+            ProgressBar bar5 = new(display1, percentage: 65, posX: 20, posY: 23, width: 25, 
+                        height: 3, barCharacter: '░', showNumber: true, showNumberBackground: false,
+                        barColor: Black, barBackground: White, numberColor: Black);
+            bar5.PrintBar();
+
+            ProgressBar bar6 = new(display1, percentage: 25, posX: 45, posY: 18, width: 35, 
+                        height: 1, barCharacter: '■', showNumber: false,
+                        barColor: DarkCyan, barBackground: Magenta);
+            bar6.PrintBar();
+
+
+
+
 
             //Display d2 = new(width: 10, height: 4, posX: 38, posY: 4,
             //                background: ConsoleColor.DarkCyan, foreground: ConsoleColor.Gray);
@@ -58,7 +90,7 @@ namespace ExampleNamespace
 
             Console.SetCursorPosition(0, 32);
             Console.ReadLine();
-        }
 
+        }
     }
 }

@@ -1,19 +1,27 @@
 DisplayCraft: 
-criação de telas e menus personalizáveis
+ criação de telas e menus personalizáveis
 
-OBJETIVO: Ser uma biblioteca que permita criação de "GUIs" no console de forma relativamente simples, e com diversas opções de personalização, além de fornecer menus como modelos personalizáveis, pensando em facilitar projetos de aplicações de console
+OBJETIVO: Ser uma biblioteca que permita criação de "GUIs" no console de
+ forma relativamente simples, e com diversas opções de personalização, 
+ além de fornecer menus como modelos personalizáveis, pensando em facilitar
+ projetos de aplicações de console
 
 ∆ PROJETO EM INÍCIO DE DESENVOLVIMENTO
 
 ✓ FUNCIONALIDADES ATUAIS:
 
-- Criação telas em console (objeto Display) podendo personalizar margens, tamanho, cores, alinhamento de cada linha.
+- Criação telas em console (objeto Display) podendo personalizar margens,
+ tamanho, cores, alinhamento de cada linha.
 
-- Criação de barras de progresso, podendo personalizar cores, tamanhos, estilo, com opção de mostrar ou não número da porcentagem. (Depende de um objeto Display para posicionamento, mas não está amarrada as margens, como o texto do Display)
+- Criação de barras de progresso, podendo personalizar cores, tamanhos,
+ estilo, com opção de mostrar ou não número da porcentagem. 
+ (Depende de um objeto Display para posicionamento, mas não está amarrada 
+ as margens, como o texto do Display)
 
 ✓ IMPLANTAÇÕES EM BREVE:
 
-- Atualização da barra de progresso para ter retorno string, possobilitando usar as verificações de tamanho e alinhamento do Display 
+- Atualização da barra de progresso para ter retorno string, possobilitando
+ usar as verificações de tamanho e alinhamento do Display 
 
 - Suporte para caracteres personalizados nas margens do Display
 
@@ -21,10 +29,12 @@ OBJETIVO: Ser uma biblioteca que permita criação de "GUIs" no console de forma
 
 ✓ OBJETIVOS A LONGO PRAZO:
 
-- Melhor incorporação da biblioteca ANSIConsole para maior flexibilidade de personalização 
+- Melhor incorporação da biblioteca ANSIConsole para maior flexibilidade
+ de personalização 
 
-- Ter grande variedade de modelos de menus disponíveis para os mais diversos usos
-
+- Ter grande variedade de modelos de menus disponíveis para os mais 
+ diversos usos
+ 
 - Suporte a seleção de items por mouse
 
 - Suporte a resolução de tela baseado no monitor 

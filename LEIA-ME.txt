@@ -1,0 +1,34 @@
+DisplayCraft: 
+criação de telas e menus personalizáveis
+
+OBJETIVO: Ser uma biblioteca que permita criação de "GUIs" no console de forma relativamente simples, e com diversas opções de personalização, além de fornecer menus como modelos personalizáveis, pensando em facilitar projetos de aplicações de console
+
+∆ PROJETO EM INÍCIO DE DESENVOLVIMENTO
+
+✓ FUNCIONALIDADES ATUAIS:
+
+- Criação telas em console (objeto Display) podendo personalizar margens, tamanho, cores, alinhamento de cada linha.
+
+- Criação de barras de progresso, podendo personalizar cores, tamanhos, estilo, com opção de mostrar ou não número da porcentagem. (Depende de um objeto Display para posicionamento, mas não está amarrada as margens, como o texto do Display)
+
+✓ IMPLANTAÇÕES EM BREVE:
+
+- Atualização da barra de progresso para ter retorno string, possobilitando usar as verificações de tamanho e alinhamento do Display 
+
+- Suporte para caracteres personalizados nas margens do Display
+
+- Primeiros modelos de Menu (com retorno de inputs) utilizando Display
+
+✓ OBJETIVOS A LONGO PRAZO:
+
+- Melhor incorporação da biblioteca ANSIConsole para maior flexibilidade de personalização 
+
+- Ter grande variedade de modelos de menus disponíveis para os mais diversos usos
+
+- Suporte a seleção de items por mouse
+
+- Suporte a resolução de tela baseado no monitor 
+
+- Outras funções que possam ser úteis
+
+∆ Ao utilizar com Windows, recomendo utilizar o Windows Terminal, que pode ser encontrado na Microsoft Store na versão mais atualizada, ou outro programa de console moderno. Não há suporte para uso com cmd ou powershell.
